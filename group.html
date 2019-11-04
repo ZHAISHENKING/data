@@ -25,9 +25,9 @@
 
 const arr = [{name: 'xiao', age: '13'},{name: 'li', age:'14'}, {name: 'ha', age:'14'}]
 
-let arr1 = _.groupBy(arr, (o)=>o.age)
+let arr1 = _.groupBy(arr, 'age')
 for (o in arr1) {
-    arr1[o] = _.map(arr1[o], (i)=> i.name)
+    arr1[o] = _.map(arr1[o], 'name')
 }
 console.log(arr1)
 </script>
