@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script>
+/*
+    分组聚合group by的使用
+    按年龄分组
+    const arr = [
+        {name: 'xiao', age: '13'},
+        {name: 'li', age:'14'},
+        {name: 'ha', age:'14'}
+    ]
+    结果返回 {13: ['xiao'], 14: ['li', 'ha']}
+*/
+
+const arr = [{name: 'xiao', age: '13'},{name: 'li', age:'14'}, {name: 'ha', age:'14'}]
+
+let arr1 = _.groupBy(arr, (o)=>o.age)
+for (o in arr1) {
+    arr1[o] = _.map(arr1[o], (i)=> i.name)
+}
+console.log(arr1)
+</script>
