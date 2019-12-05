@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app{display:flex;flex-wrap:wrap;width:500px;justify-content: center;}
+        img{width:200px;border:solid 1px #000;margin-top:5px;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        <img src="default.png" data-src="https://qiniu.s001.xin/pic/css居中方法.png" />
+        
+    </div>
+</body>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+/* 
+懒加载效果
+*/
+const imgList = $('img');
+const observer = new IntersectionObserver((changes) => {
+  // changes: 被监听的元素集合，不等于imgList
+  changes.forEach((change) => {
+    // 如果处于可视区域
+    if (change.isIntersecting) {
+      const img = change.target
+      img.src = img.dataset.src
+      observer.unobserve(img)
+    }
+  })
+})
+// imgList是个类数组对象，将其转换为数组可以使用forEach遍历
+Array.prototype.slice.call(imgList).forEach(item=>{
+    observer.observe(item)
+})
+</script>
