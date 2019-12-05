@@ -62,6 +62,14 @@
 <script>
 /* 
 懒加载效果
+使用IntersectionObserver API
+优点：避免类scroll事件密集发生造成的性能问题，
+原生JS支持，不需要引入第三方库，
+判断元素是否在视口内比较方便
+
+缺点：浏览器支持性， 
+IntersectionObserver API 是异步的，不随着目标元素的滚动同步触发。
+线程优先级较低，即浏览器线程空闲时才会处理此任务
 */
 const imgList = $('img');
 const observer = new IntersectionObserver((changes) => {
