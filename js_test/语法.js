@@ -40,9 +40,25 @@ void function (){
     f.call(null);
 }()
 
+// void function (){
+//     function f(){
+//         console.log(this);
+//     };
+//     f.call(null);
+// }()
+
 void function (){
-    function f(){
-        console.log(this);
-    };
-    f.call(null);
+    let o = { a: 10, b: 20}
+    Object.defineProperty(o, "c", {enumerable:false, value:30})
+
+    for(let p in o)
+        console.log(p); // a b
+}()
+
+void function(){
+    const a = 2;
+    if(true){
+        console.log(a); // 抛错
+        const a = 1;   
+    }
 }()
