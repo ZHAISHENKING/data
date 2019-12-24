@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    body {
+        counter-reset: section;           /* 重置计数器成0 */
+    }
+    p::before {
+        counter-increment: section;
+        content: counter(section) ". ";
+    }
+    </style>
+</head>
+<body>
+    <p class="special">I'm real element</p>
+    <p class="special">I'm real element</p>
+    <p class="special">I'm real element</p>
+    <p class="special">I'm real element</p>
+</body>
+</html>
