@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .fixed, .auto {
+        height:300px;
+        /* outline:solid 1px blue; */
+    }
+    
+    /* 使用正常流解决这个问题的思路是，利用负 margin */
+    
+    .fixed {
+        display:inline-block;
+        vertical-align:top;
+        width:200px;
+        background:#ccc;
+    }
+    .auto {
+        margin-left:-200px;
+        padding-left:200px;
+        width:100%;
+        color:#fff;
+        box-sizing:border-box;
+        display:inline-block;
+        vertical-align:top;
+        background:#000;
+    }
+    .outer{
+        font-size:0;
+    }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="fixed">adasdsadasd</div>
+        <div class="auto">dasdasdasd</div>
+    </div>
+</body>
+</html>
