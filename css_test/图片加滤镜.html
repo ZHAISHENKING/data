@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            display: inline-block;
+            position: relative;
+        }
+        .prev, .next{
+            width:50%; height:100%;
+            position: absolute;
+            top:0;
+            opacity: .5;
+        }
+        .prev{
+            left:0;
+            background:#cd0000;
+        }
+        .next{
+            right:0;
+            background:#34538b;
+        }
+        img{width:300px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <a href="javascript:" class="prev"></a>
+        <a href="javascript:" class="next"></a>
+        <img src="https://static001.geekbang.org/resource/image/0f/ac/0f6f4cc6d564df9986e0108cb8a427ac.jpg" alt="">
+    </div>
+</body>
+</html>
