@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h3{margin:0}
+        header{
+            background: skyblue;
+            color:#fff;
+            height: 50px;
+            position: fixed;
+            top:0;
+        }
+        .content{
+            height:400px;
+        }
+        a{margin-left:20px;}
+        #hash1,#hash2,#hash3{
+            padding-top:50px;
+        }
+        h3:first-child {
+            margin-top:50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hash1">标题1</a>
+            <a href="#hash2">标题2</a>
+            <a href="#hash3">标题3</a>
+        </nav>
+    </header>
+    <div>
+        <h3 class="content"><span id="hash1">标题1</span></h3>
+        <h3 class="content"><span id="hash2">标题2</span></h3>
+        <h3 class="content"><span id="hash3">标题3</span></h3>
+    </div>
+</body>
+</html>

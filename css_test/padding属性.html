@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>padding 属性</title>
+    <style>
+    .box{
+        width:80px;
+        height:130px;
+        padding: 20px 60px;
+        box-sizing: border-box;
+        background:#ccc;
+        overflow: auto;
+    }
+    span{
+        padding:170px;
+        background: pink;
+    }
+
+    a + a:before {
+        content: "";
+        font-size: 0;
+        padding: 10px 3px 1px;
+        margin-left: 6px;
+        border-left: 1px solid gray;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        123 
+        <span>1234</span>
+    </div>
+
+    <h2>内联元素 padding 应用</h2>
+    <a href="">登录</a><a href="">注册</a>
+    
+</body>
+</html>
