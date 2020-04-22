@@ -1,17 +1,21 @@
-function format(text, arr){
+function format(text, arr) {
 // 两部分任务，p是匹配表达式，q是匹配动态替换的结果
-let p = "";
-let q = "";
-for (var i=0;i<arr.length;i++){
-	p+=`(${arr[i]})`;
-	q+=`$${i+1}`;
-	if(i<arr.length-1){p+='|'}
-}
-const patten = eval(`/${p}/g`)
-// patten = /(腾讯云)|(云)/g;
-// q = '$1$2'
-let matches = text.replace(patten, `<span class="red">${q}</span>`)
-return matches
+  let p = "";
+  let q = "";
+  let matches;
+  for (let i = 0; i < arr.length; i++) {
+    p += `(${arr[i]})`;
+    q += `$${i + 1}`;
+    if (i < arr.length - 1) {
+      p += '|'
+    }
+  }
+
+  // patten = /(腾讯云)|(云)/g;
+  const patten = eval(`/${p}/g`)
+  // q = '$1$2'
+  matches = text.replace(patten, `<span class="red">${q}</span>`)
+  return matches
 }
 
 

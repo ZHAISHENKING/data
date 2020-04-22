@@ -1,5 +1,4 @@
 function addComma(num) {
-  // TODO
   let nums = num.toString();
   let result = ''
   let count = 1
