@@ -5,34 +5,35 @@ const locationList = [
   {id: 3, pid: 1, name: "广州市"}
 ]
 
-let locationTree = buildLocationTree(locationList);
-console.log(locationTree)
-
-function buildLocationTree(locationList) {
-	// 实现
-	let res = {}
-	for(let i=0;i<locationList.length;i++){
-		if(locationList[i].pid === undefined){
-			res.root = locationList[i]
-			let sub = convertToTreeData(locationList,locationList[i].id)
-			res.root.sub = sub
+function array2obj(arr){
+	let result = {}
+	for(let i=0;i<arr.length;i++){
+		if(arr[i].pid === undefined){
+			result.root = arr[i]
+			let sub = x(arr, arr[i].id)
+			result.root.sub = sub
 		}
 	}
-
-	function convertToTreeData(data, pid) {
-	  let result = []
-	  let temp = []
-	  for(let i=0;i<data.length;i++){
-	  	if(data[i].pid === pid){
-	  		const obj = data[i]
-	  		temp = convertToTreeData(data, data[i].id)
-	  		if(temp.length>0){
-	  			obj.sub = temp
-	  		}
-	  		result.push(obj)
-	  	}
-	  }  
-	  return result
-	}
-  	return res
+	return result
 }
+
+function x(arr, pid){
+	let sub = []
+	let temp = []
+	for(let i=0;i<arr.length;i++){
+		if(arr[i].pid === pid){
+			const obj = arr[i]
+			temp = x(arr, obj.id)
+			// 这里如果找不到子节点，就不需要sub了。在项目中为保持返回格式统一，一般返回[]
+			if(temp.length){
+				obj.sub = temp
+			}
+			sub.push(arr[i])
+		}
+	}
+	return sub
+}
+
+
+
+console.log(array2obj(locationList))
