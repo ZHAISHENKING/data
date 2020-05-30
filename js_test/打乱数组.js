@@ -1,7 +1,7 @@
 /** 设计一个函数，使原数组顺序打乱 */
-const arr = [1,2,3,4,5,6,7]
+const arr = [1, 2, 3, 4, 5, 6, 7]
 
-/** 方法一: 通过随机生成索引返回打乱数组 */ 
+/** 方法一: 通过随机生成索引返回打乱数组 */
 // function disorderArray(arr){
 //     let len = arr.length;
 //     let validCount = 0
@@ -22,15 +22,15 @@ const arr = [1,2,3,4,5,6,7]
 
 /** 方法二： sort */
 function shuffle(arr) {
-    arr.sort(() => {
-      return Math.random() - 0.5
-    })
-    return arr
-  }
+  arr.sort(() => {
+    return Math.random() - 0.5
+  })
+  return arr
+}
 
-  function obfs(arr) {
-    return arr.slice().reduce(acc => [...acc, ...arr.splice(parseInt(Math.random() * arr.length, 10), 1)], []);
-  }
-  
-  console.log(obfs([1, 2, 3, 4, 5,7,11,6,9,8,0,12]));
-// console.log(shuffle(arr))
+function obfs(arr) {
+  return arr.slice().reduce(acc => [...acc, ...arr.splice(parseInt(Math.random() * arr.length, 10), 1)], []);
+}
+
+console.log(obfs([1, 2, 3, 4, 5, 7, 11, 6, 9, 8, 0, 12]));
+console.log(shuffle(arr))
